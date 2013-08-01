@@ -40,8 +40,13 @@ class EventController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $event = $this->loadModel($id);
+        $member = new EventMember('search');
+        $member->event_id = $id;
+
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'event' => $event,
+            'model' => $member,
         ));
     }
 

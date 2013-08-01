@@ -52,10 +52,13 @@ class SiteController extends Controller {
         if ($event) {
             $signed = $event->getArchetypeMembersSigned();
             if ($signed) {
-            foreach ($signed as $sign) {
-                if ($sign->cnt < $event->archetypes[$sign->archetype])
-                    $archetypes[$sign->archetype] = Archetype::toText($sign->archetype);
-            }
+                foreach ($event->archetypes as $arch => $count) {
+                    if ((isset($signed[$arch]) && $count > 0 && $signed[$arch] < $count) || (!isset($signed[$arch]) && $count > 0))
+                        $archetypes[$arch] = Archetype::toText($arch);
+                }
+                $archetypes[Archetype::ARCHETYPE_BACKUP] = Archetype::toText(Archetype::ARCHETYPE_BACKUP);
+            } else if (count($event->members) == array_sum($event->archetypes)) {
+                $archetypes = array(Archetype::ARCHETYPE_BACKUP => Archetype::toText(Archetype::ARCHETYPE_BACKUP));
             } else {
                 $archetypes = Archetype::getArray();
             }

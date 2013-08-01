@@ -19,7 +19,6 @@ $this->menu=array(
 		'min_weapon_ql',
 		'min_talisman_ql',
 		'min_glyph_ql',
-		'archetypes_needed',
 		'notes',
 	),
 )); ?>

@@ -49,3 +49,6 @@ span.event-no-signed {
 span.event-signed {
     color: darkgreen;
 }
+span.event-backups-signed {
+    color: darkblue;
+}

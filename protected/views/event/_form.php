@@ -26,9 +26,11 @@
 <fieldset>
     <legend>Classes</legend>
     <?php foreach ($archetypes as $key => $arch) : ?>
-        <?php echo CHtml::label($arch, "Arch[{$arch}][count]"); ?>
-        <?php echo CHtml::hiddenField("Arch[{$arch}][key]", $key); ?>
-        <?php echo CHtml::textField("Arch[{$arch}][count]", 0, array('class' => 'span2')); ?>
+        <?php if ($key != Archetype::ARCHETYPE_BACKUP) : ?>
+            <?php echo CHtml::label($arch, "Arch[{$arch}][count]"); ?>
+            <?php echo CHtml::hiddenField("Arch[{$arch}][key]", $key); ?>
+            <?php echo CHtml::textField("Arch[{$arch}][count]", 0, array('class' => 'span2')); ?>
+        <?php endif; ?>
     <?php endforeach; ?>
 </fieldset>
 

@@ -66,7 +66,7 @@ class InstanceController extends Controller
             $model->image = null;
             $file = CUploadedFile::getInstance($model, 'image');
             if ($file) {
-                $file->saveAs(Yii::app()->basePath . '../images/instances/' . $file->name);
+                $file->saveAs(Yii::app()->basePath . '/../images/instances/' . $file->name);
                 $model->image = $file->name;
             }
 			if($model->save())

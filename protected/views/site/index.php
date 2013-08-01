@@ -22,9 +22,8 @@
                 <?php foreach ($event->archetypes as $arch => $count) : ?>
                     <?php $mcount = $count - $event->getMembersSignedByArchetype($arch); ?>
                     <p>
-                        <?php echo Archetype::toText($arch); ?>
-                        <?php echo $mcount ? CHtml::tag('span', array('class' => 'event-no-signed'), $mcount) :
-                            CHtml::tag('span', array('class' => 'event-signed'), $mcount); ?></span>
+                        <?php echo $mcount > 0 ? Archetype::toText($arch) . CHtml::tag('span', array('class' => 'event-signed'), $mcount) :
+                            CHtml::tag('strike', array(), Archetype::toText($arch) . CHtml::tag('span', array('class' => 'event-no-signed'), 0)); ?></span>
                     </p>
                 <?php endforeach; ?>
                 <hr>
@@ -53,6 +52,9 @@
                         }'
                             ),
                         )); ?>
+                    <?php endif; ?>
+                    <?php if (Yii::app()->user->member->role == Role::ROLE_ADMIN) : ?>
+                        <p class="hint"><?php echo CHtml::link('View signups for this event', Yii::app()->createUrl('event/view', array('id' => $event->id))); ?></p>
                     <?php endif; ?>
                 </div>
             </div>

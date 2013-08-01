@@ -132,7 +132,15 @@ class Event extends CActiveRecord {
         $cr = new CDbCriteria();
         $cr->select = 'archetype, COUNT(event_id) AS cnt';
         $cr->condition = 'event_id = :event';
+        $cr->params = array(':event' => $this->id);
         $cr->group = 'archetype';
-        return EventMember::model()->findAll($cr);
+        return CHtml::listData(EventMember::model()->findAll($cr), 'archetype', 'cnt');
+    }
+
+    public function getBackups() {
+        return EventMember::model()->countByAttributes(array(
+            'event_id' => $this->id,
+            'archetype' => Archetype::ARCHETYPE_BACKUP,
+        ));
     }
 }

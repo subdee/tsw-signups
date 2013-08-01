@@ -47,7 +47,7 @@ class Instance extends CActiveRecord
 			array('notes', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, image, min_weapon_ql, min_talisman_ql, min_glyph_ql, archetypes_needed, notes', 'safe', 'on'=>'search'),
+			array('id, name, image, min_weapon_ql, min_talisman_ql, min_glyph_ql, notes', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,7 +74,6 @@ class Instance extends CActiveRecord
 			'min_weapon_ql' => 'Min Weapon Ql',
 			'min_talisman_ql' => 'Min Talisman Ql',
 			'min_glyph_ql' => 'Min Glyph Ql',
-			'archetypes_needed' => 'Archetypes Needed',
 			'notes' => 'Notes',
 		);
 	}
@@ -96,7 +95,6 @@ class Instance extends CActiveRecord
 		$criteria->compare('min_weapon_ql',$this->min_weapon_ql);
 		$criteria->compare('min_talisman_ql',$this->min_talisman_ql);
 		$criteria->compare('min_glyph_ql',$this->min_glyph_ql);
-		$criteria->compare('archetypes_needed',$this->archetypes_needed,true);
 		$criteria->compare('notes',$this->notes,true);
 
 		return new CActiveDataProvider($this, array(
