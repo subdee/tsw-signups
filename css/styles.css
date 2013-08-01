@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Petita;
+    src: url(../fonts/PetitaMedium/PetitaMedium.ttf);
+}
+body {
+    font-family: Petita !important;
+}
+#page {
+    padding-top: 60px;
+}
+.text-center {
+    text-align: center;
+}
+.hint {
+    font-size: 0.9em;
+    font-style: italic;
+}
+#footer {
+    font-size: 0.9em;
+}
+
+.index-events {
+    margin: 20px;
+    border-top: #999 1px solid;
+    padding: 10px;
+}
+.index-events .index-event {
+    border: #999 1px solid;
+    padding: 20px;
+    font-size: 1.2em;
+}
+.index-events .index-event img {
+    width: 300px;
+    margin-bottom: 10px;
+}
+.index-event span {
+    float: right;
+    font-weight: bold;
+}
+span.event-start-date {
+    color: indigo;
+}
+span.event-end-date {
+    color: indigo;
+}
+span.event-no-signed {
+    color: darkred;
+}
+span.event-signed {
+    color: darkgreen;
+}

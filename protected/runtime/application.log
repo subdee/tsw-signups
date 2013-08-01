@@ -1,0 +1,983 @@
+2013/08/01 07:07:24 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.bootstrap" is not defined.' in /var/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/yii/framework/base/CModule.php(106): CComponent->__get('bootstrap')
+#1 /var/www/tsw-signups/themes/bootstrap/views/layouts/main.php(12): CModule->__get('bootstrap')
+#2 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#3 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/widgets/CContentDecorator.php(77): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#5 /var/yii/framework/web/widgets/CContentDecorator.php(55): CContentDecorator->decorate('<div id="conten...')
+#6 /var/yii/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput('<div id="conten...')
+#7 /var/yii/framework/web/CBaseController.php(207): COutputProcessor->run()
+#8 /var/yii/framework/web/CBaseController.php(301): CBaseController->endWidget('CContentDecorat...')
+#9 /var/www/tsw-signups/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#10 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#11 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#12 /var/yii/framework/web/CController.php(785): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#13 /var/www/tsw-signups/protected/controllers/SiteController.php(32): CController->render('index')
+#14 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#15 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/yii/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#19 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#20 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/tsw-signups/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/tsw-signups/
+---
+2013/08/01 07:08:53 [error] [exception.CException] exception 'CException' with message 'Alias "gii.GiiModule" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/yii/framework/YiiBase.php(198): YiiBase::import('gii.GiiModule', true)
+#1 /var/yii/framework/base/CModule.php(283): YiiBase::createComponent('gii.GiiModule', 'gii', NULL, Array)
+#2 /var/yii/framework/web/CWebApplication.php(338): CModule->getModule('gii')
+#3 /var/yii/framework/web/CWebApplication.php(277): CWebApplication->createController('gii')
+#4 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#5 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/tsw-signups/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/tsw-signups/gii
+---
+2013/08/01 07:26:55 [error] [php] Undefined variable: guild (/var/www/tsw-signups/themes/bootstrap/views/site/index.php:5)
+Stack trace:
+#0 /var/yii/framework/web/CController.php(870): SiteController->renderFile()
+#1 /var/yii/framework/web/CController.php(783): SiteController->renderPartial()
+#2 /var/www/tsw-signups/protected/controllers/SiteController.php(32): SiteController->render()
+#3 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#4 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#5 /var/yii/framework/web/CController.php(287): SiteController->runAction()
+#6 /var/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#7 /var/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#8 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#9 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/
+in /var/www/tsw-signups/themes/bootstrap/views/site/index.php (5)
+in /var/www/tsw-signups/protected/controllers/SiteController.php (32)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 07:34:42 [error] [exception.CException] exception 'CException' with message 'Property "CAccessRule.redirect" is not defined.' in /var/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/yii/framework/web/auth/CAccessControlFilter.php(103): CComponent->__set('redirect', Array)
+#1 /var/yii/framework/web/CController.php(1145): CAccessControlFilter->setRules(Array)
+#2 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#3 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#4 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#5 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#7 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#8 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#9 /var/www/tsw-signups/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/tsw-signups/
+---
+2013/08/01 07:47:01 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.member" is not defined.' in /var/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/yii/framework/web/auth/CWebUser.php(141): CComponent->__get('member')
+#1 /var/www/tsw-signups/themes/bootstrap/views/layouts/main.php(23): CWebUser->__get('member')
+#2 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#3 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(785): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#5 /var/www/tsw-signups/protected/controllers/SiteController.php(68): CController->render('login', Array)
+#6 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/tsw-signups/index.php/site/login
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 07:48:42 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.member" is not defined.' in /var/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/yii/framework/web/auth/CWebUser.php(141): CComponent->__get('member')
+#1 /var/www/tsw-signups/themes/bootstrap/views/layouts/main.php(23): CWebUser->__get('member')
+#2 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#3 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(785): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#5 /var/www/tsw-signups/protected/controllers/SiteController.php(68): CController->render('login', Array)
+#6 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionLogin()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/yii/framework/web/CWebApplication.php(283): CController->run('login')
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/login')
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/tsw-signups/index.php/site/login
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 07:57:11 [error] [exception.CException] exception 'CException' with message 'Alias "gii.GiiModule" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/yii/framework/YiiBase.php(198): YiiBase::import('gii.GiiModule', true)
+#1 /var/yii/framework/base/CModule.php(283): YiiBase::createComponent('gii.GiiModule', 'gii', NULL, Array)
+#2 /var/yii/framework/web/CWebApplication.php(338): CModule->getModule('gii')
+#3 /var/yii/framework/web/CWebApplication.php(277): CWebApplication->createController('gii')
+#4 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('gii')
+#5 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#6 /var/www/tsw-signups/index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/tsw-signups/index.php?r=gii
+---
+2013/08/01 08:07:08 [error] [exception.CException] exception 'CException' with message 'CClientScript and its behaviors do not have a method or closure named "registerCoreScripte".' in /var/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/tsw-signups/protected/controllers/EventController.php(53): CComponent->__call('registerCoreScr...', Array)
+#1 /var/www/tsw-signups/protected/controllers/EventController.php(53): CClientScript->registerCoreScripte('jquery')
+#2 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#3 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#12 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('event/create')
+#13 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /var/www/tsw-signups/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/tsw-signups/index.php/event/create
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 08:14:24 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT * FROM 'event' 't' WHERE start_time > NOW() + INTERVAL 15 MINUTE
+in /var/www/tsw-signups/protected/controllers/SiteController.php (33)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 08:14:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "15": syntax error. The SQL statement executed was: SELECT * FROM 'event' 't' WHERE start_time > NOW() + INTERVAL 15 MINUTE.
+in /var/www/tsw-signups/protected/controllers/SiteController.php (33)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 08:14:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 near "15": syntax error. The SQL statement executed was: SELECT * FROM 'event' 't' WHERE start_time > NOW() + INTERVAL 15 MINUTE' in /var/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /var/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/tsw-signups/protected/controllers/SiteController.php(33): CActiveRecord->findAll()
+#4 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#14 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/tsw-signups/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tsw-signups/
+HTTP_REFERER=http://localhost/tsw-signups/event/1
+---
+2013/08/01 08:16:55 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT * FROM 'event' 't' WHERE start_time > DATE("NOW", "+15 MINUTE")
+in /var/www/tsw-signups/protected/controllers/SiteController.php (33)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 08:16:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: start_time. The SQL statement executed was: SELECT * FROM 'event' 't' WHERE start_time > DATE("NOW", "+15 MINUTE").
+in /var/www/tsw-signups/protected/controllers/SiteController.php (33)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 08:16:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: start_time. The SQL statement executed was: SELECT * FROM 'event' 't' WHERE start_time > DATE("NOW", "+15 MINUTE")' in /var/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /var/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/tsw-signups/protected/controllers/SiteController.php(33): CActiveRecord->findAll()
+#4 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#14 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/tsw-signups/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tsw-signups/
+HTTP_REFERER=http://localhost/tsw-signups/event/1
+---
+2013/08/01 08:17:05 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT * FROM 'event' 't' WHERE start_time > DATE("NOW", "+15 MINUTE")
+in /var/www/tsw-signups/protected/controllers/SiteController.php (33)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 08:17:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: start_time. The SQL statement executed was: SELECT * FROM 'event' 't' WHERE start_time > DATE("NOW", "+15 MINUTE").
+in /var/www/tsw-signups/protected/controllers/SiteController.php (33)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 08:17:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: start_time. The SQL statement executed was: SELECT * FROM 'event' 't' WHERE start_time > DATE("NOW", "+15 MINUTE")' in /var/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /var/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/tsw-signups/protected/controllers/SiteController.php(33): CActiveRecord->findAll()
+#4 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#5 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#6 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#14 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#15 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/tsw-signups/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/tsw-signups/
+HTTP_REFERER=http://localhost/tsw-signups/event/1
+---
+2013/08/01 08:18:53 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/yii/framework/web/auth/CAccessControlFilter.php:170
+Stack trace:
+#0 /var/yii/framework/web/auth/CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/yii/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/yii/framework/web/CWebApplication.php(283): CController->run('admin')
+#8 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('event/admin')
+#9 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/tsw-signups/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tsw-signups/event/admin
+---
+2013/08/01 08:22:42 [error] [php] include(EDatetimeBehavior.php): failed to open stream: No such file or directory (/var/yii/framework/YiiBase.php:423)
+Stack trace:
+#0 /var/yii/framework/YiiBase.php(198): import()
+#1 /var/yii/framework/base/CComponent.php(327): createComponent()
+#2 /var/yii/framework/base/CComponent.php(298): Event->attachBehavior()
+#3 /var/yii/framework/db/ar/CActiveRecord.php(389): Event->attachBehaviors()
+#4 /var/yii/framework/db/ar/CActiveRecord.php(403): model()
+#5 /var/yii/framework/db/ar/CActiveRecord.php(78): Event->getMetaData()
+#6 /var/www/tsw-signups/protected/controllers/EventController.php(57): Event->__construct()
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): EventController->runAction()
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): EventController->filterAccessControl()
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): EventController->runActionWithFilters()
+#16 /var/yii/framework/web/CWebApplication.php(283): EventController->run()
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/event/create
+in /var/www/tsw-signups/protected/controllers/EventController.php (57)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 08:22:54 [error] [exception.CException] exception 'CException' with message 'Alias "ext.behvaiors.EDatetimeBehavior" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/yii/framework/YiiBase.php(198): YiiBase::import('ext.behvaiors.E...', true)
+#1 /var/yii/framework/base/CComponent.php(327): YiiBase::createComponent(Array)
+#2 /var/yii/framework/base/CComponent.php(298): CComponent->attachBehavior('datetimebehavio...', Array)
+#3 /var/yii/framework/db/ar/CActiveRecord.php(389): CComponent->attachBehaviors(Array)
+#4 /var/yii/framework/db/ar/CActiveRecord.php(403): CActiveRecord::model('Event')
+#5 /var/yii/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#6 /var/www/tsw-signups/protected/controllers/EventController.php(57): CActiveRecord->__construct()
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('event/create')
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tsw-signups/event/create
+HTTP_REFERER=http://localhost/tsw-signups/event/admin
+---
+2013/08/01 08:22:55 [error] [exception.CException] exception 'CException' with message 'Alias "ext.behvaiors.EDatetimeBehavior" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/yii/framework/YiiBase.php(198): YiiBase::import('ext.behvaiors.E...', true)
+#1 /var/yii/framework/base/CComponent.php(327): YiiBase::createComponent(Array)
+#2 /var/yii/framework/base/CComponent.php(298): CComponent->attachBehavior('datetimebehavio...', Array)
+#3 /var/yii/framework/db/ar/CActiveRecord.php(389): CComponent->attachBehaviors(Array)
+#4 /var/yii/framework/db/ar/CActiveRecord.php(403): CActiveRecord::model('Event')
+#5 /var/yii/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#6 /var/www/tsw-signups/protected/controllers/EventController.php(57): CActiveRecord->__construct()
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('event/create')
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tsw-signups/event/create
+HTTP_REFERER=http://localhost/tsw-signups/event/admin
+---
+2013/08/01 08:23:00 [error] [exception.CException] exception 'CException' with message 'Alias "ext.behvaiors.EDatetimeBehavior" is invalid. Make sure it points to an existing PHP file and the file is readable.' in /var/yii/framework/YiiBase.php:318
+Stack trace:
+#0 /var/yii/framework/YiiBase.php(198): YiiBase::import('ext.behvaiors.E...', true)
+#1 /var/yii/framework/base/CComponent.php(327): YiiBase::createComponent(Array)
+#2 /var/yii/framework/base/CComponent.php(298): CComponent->attachBehavior('datetimebehavio...', Array)
+#3 /var/yii/framework/db/ar/CActiveRecord.php(389): CComponent->attachBehaviors(Array)
+#4 /var/yii/framework/db/ar/CActiveRecord.php(403): CActiveRecord::model('Event')
+#5 /var/yii/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#6 /var/www/tsw-signups/protected/controllers/EventController.php(57): CActiveRecord->__construct()
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('event/create')
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tsw-signups/event/create
+HTTP_REFERER=http://localhost/tsw-signups/event/admin
+---
+2013/08/01 08:25:33 [error] [exception.CException] exception 'CException' with message 'Property "Event.name" is not defined.' in /var/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('name')
+#1 /var/www/tsw-signups/protected/views/site/index.php(12): CActiveRecord->__get('name')
+#2 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#3 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#5 /var/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#6 /var/www/tsw-signups/protected/controllers/SiteController.php(34): CController->render('index', Array)
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tsw-signups/
+HTTP_REFERER=http://localhost/tsw-signups/event/2
+---
+2013/08/01 08:25:34 [error] [exception.CException] exception 'CException' with message 'Property "Event.name" is not defined.' in /var/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('name')
+#1 /var/www/tsw-signups/protected/views/site/index.php(12): CActiveRecord->__get('name')
+#2 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#3 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#5 /var/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#6 /var/www/tsw-signups/protected/controllers/SiteController.php(34): CController->render('index', Array)
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tsw-signups/
+HTTP_REFERER=http://localhost/tsw-signups/event/2
+---
+2013/08/01 08:40:38 [error] [exception.CException] exception 'CException' with message 'Unrecognized locale "en_uk".' in /var/yii/framework/i18n/CLocale.php:105
+Stack trace:
+#0 /var/yii/framework/i18n/CLocale.php(65): CLocale->__construct('en_uk')
+#1 /var/yii/framework/base/CApplication.php(383): CLocale::getInstance('en_uk')
+#2 /var/yii/framework/base/CApplication.php(422): CApplication->getLocale()
+#3 /var/yii/framework/base/CComponent.php(112): CApplication->getDateFormatter()
+#4 /var/yii/framework/base/CModule.php(106): CComponent->__get('dateFormatter')
+#5 /var/www/tsw-signups/protected/extensions/behaviors/EDatetimeBehavior.php(52): CModule->__get('dateFormatter')
+#6 /var/yii/framework/base/CComponent.php(559): EDatetimeBehavior->afterFind(Object(CEvent))
+#7 /var/yii/framework/db/ar/CActiveRecord.php(881): CComponent->raiseEvent('onAfterFind', Object(CEvent))
+#8 /var/yii/framework/db/ar/CActiveRecord.php(974): CActiveRecord->onAfterFind(Object(CEvent))
+#9 /var/yii/framework/db/ar/CActiveRecord.php(1803): CActiveRecord->afterFind()
+#10 /var/yii/framework/db/ar/CActiveRecord.php(1824): CActiveRecord->populateRecord(Array, true)
+#11 /var/yii/framework/db/ar/CActiveRecord.php(1291): CActiveRecord->populateRecords(Array, true, NULL)
+#12 /var/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#13 /var/www/tsw-signups/protected/controllers/SiteController.php(33): CActiveRecord->findAll()
+#14 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#15 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#22 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#24 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#25 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /var/www/tsw-signups/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/tsw-signups/
+HTTP_REFERER=http://localhost/tsw-signups/event/2
+---
+2013/08/01 08:40:39 [error] [exception.CException] exception 'CException' with message 'Unrecognized locale "en_uk".' in /var/yii/framework/i18n/CLocale.php:105
+Stack trace:
+#0 /var/yii/framework/i18n/CLocale.php(65): CLocale->__construct('en_uk')
+#1 /var/yii/framework/base/CApplication.php(383): CLocale::getInstance('en_uk')
+#2 /var/yii/framework/base/CApplication.php(422): CApplication->getLocale()
+#3 /var/yii/framework/base/CComponent.php(112): CApplication->getDateFormatter()
+#4 /var/yii/framework/base/CModule.php(106): CComponent->__get('dateFormatter')
+#5 /var/www/tsw-signups/protected/extensions/behaviors/EDatetimeBehavior.php(52): CModule->__get('dateFormatter')
+#6 /var/yii/framework/base/CComponent.php(559): EDatetimeBehavior->afterFind(Object(CEvent))
+#7 /var/yii/framework/db/ar/CActiveRecord.php(881): CComponent->raiseEvent('onAfterFind', Object(CEvent))
+#8 /var/yii/framework/db/ar/CActiveRecord.php(974): CActiveRecord->onAfterFind(Object(CEvent))
+#9 /var/yii/framework/db/ar/CActiveRecord.php(1803): CActiveRecord->afterFind()
+#10 /var/yii/framework/db/ar/CActiveRecord.php(1824): CActiveRecord->populateRecord(Array, true)
+#11 /var/yii/framework/db/ar/CActiveRecord.php(1291): CActiveRecord->populateRecords(Array, true, NULL)
+#12 /var/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#13 /var/www/tsw-signups/protected/controllers/SiteController.php(33): CActiveRecord->findAll()
+#14 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#15 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#22 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#24 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#25 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /var/www/tsw-signups/index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/tsw-signups/
+HTTP_REFERER=http://localhost/tsw-signups/event/2
+---
+2013/08/01 08:54:57 [error] [exception.CException] exception 'CException' with message 'Property "EventController.breadcrumbs" is not defined.' in /var/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/tsw-signups/protected/views/event/create.php(2): CComponent->__set('breadcrumbs', Array)
+#1 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#2 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#3 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#5 /var/www/tsw-signups/protected/controllers/EventController.php(71): CController->render('create', Array)
+#6 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('event/create')
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/tsw-signups/event/create
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 08:55:45 [error] [php] Undefined variable: archetypes (/var/www/tsw-signups/protected/views/event/_form.php:26)
+Stack trace:
+#0 /var/yii/framework/web/CController.php(870): EventController->renderFile()
+#1 /var/www/tsw-signups/protected/views/event/create.php(10): EventController->renderPartial()
+#2 /var/yii/framework/web/CBaseController.php(127): require()
+#3 /var/yii/framework/web/CBaseController.php(96): EventController->renderInternal()
+#4 /var/yii/framework/web/CController.php(870): EventController->renderFile()
+#5 /var/yii/framework/web/CController.php(783): EventController->renderPartial()
+#6 /var/www/tsw-signups/protected/controllers/EventController.php(71): EventController->render()
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): EventController->runAction()
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): EventController->filterAccessControl()
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): EventController->runActionWithFilters()
+#16 /var/yii/framework/web/CWebApplication.php(283): EventController->run()
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/event/create
+in /var/www/tsw-signups/protected/views/event/_form.php (26)
+in /var/www/tsw-signups/protected/views/event/create.php (10)
+in /var/www/tsw-signups/protected/controllers/EventController.php (71)
+2013/08/01 08:55:46 [error] [php] Undefined variable: archetypes (/var/www/tsw-signups/protected/views/event/_form.php:26)
+Stack trace:
+#0 /var/yii/framework/web/CController.php(870): EventController->renderFile()
+#1 /var/www/tsw-signups/protected/views/event/create.php(10): EventController->renderPartial()
+#2 /var/yii/framework/web/CBaseController.php(127): require()
+#3 /var/yii/framework/web/CBaseController.php(96): EventController->renderInternal()
+#4 /var/yii/framework/web/CController.php(870): EventController->renderFile()
+#5 /var/yii/framework/web/CController.php(783): EventController->renderPartial()
+#6 /var/www/tsw-signups/protected/controllers/EventController.php(71): EventController->render()
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): EventController->runAction()
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): EventController->filterAccessControl()
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): EventController->runActionWithFilters()
+#16 /var/yii/framework/web/CWebApplication.php(283): EventController->run()
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/event/create
+in /var/www/tsw-signups/protected/views/event/_form.php (26)
+in /var/www/tsw-signups/protected/views/event/create.php (10)
+in /var/www/tsw-signups/protected/controllers/EventController.php (71)
+2013/08/01 08:55:47 [error] [php] Undefined variable: archetypes (/var/www/tsw-signups/protected/views/event/_form.php:26)
+Stack trace:
+#0 /var/yii/framework/web/CController.php(870): EventController->renderFile()
+#1 /var/www/tsw-signups/protected/views/event/create.php(10): EventController->renderPartial()
+#2 /var/yii/framework/web/CBaseController.php(127): require()
+#3 /var/yii/framework/web/CBaseController.php(96): EventController->renderInternal()
+#4 /var/yii/framework/web/CController.php(870): EventController->renderFile()
+#5 /var/yii/framework/web/CController.php(783): EventController->renderPartial()
+#6 /var/www/tsw-signups/protected/controllers/EventController.php(71): EventController->render()
+#7 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): EventController->runAction()
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): EventController->filterAccessControl()
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): EventController->runActionWithFilters()
+#16 /var/yii/framework/web/CWebApplication.php(283): EventController->run()
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/event/create
+in /var/www/tsw-signups/protected/views/event/_form.php (26)
+in /var/www/tsw-signups/protected/views/event/create.php (10)
+in /var/www/tsw-signups/protected/controllers/EventController.php (71)
+2013/08/01 09:01:53 [error] [exception.CException] exception 'CException' with message 'Property "Event.archetypes" is not defined.' in /var/yii/framework/base/CComponent.php:131
+Stack trace:
+#0 /var/yii/framework/db/ar/CActiveRecord.php(144): CComponent->__get('archetypes')
+#1 /var/www/tsw-signups/protected/controllers/EventController.php(65): CActiveRecord->__get('archetypes')
+#2 /var/yii/framework/web/actions/CInlineAction.php(50): EventController->actionCreate()
+#3 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#12 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('event/create')
+#13 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /var/www/tsw-signups/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/tsw-signups/event/create
+HTTP_REFERER=http://localhost/tsw-signups/event/create
+---
+2013/08/01 09:03:31 [error] [php] Indirect modification of overloaded property Event::$archetypes has no effect (/var/www/tsw-signups/protected/controllers/EventController.php:65)
+Stack trace:
+#0 /var/yii/framework/web/filters/CFilterChain.php(134): EventController->runAction()
+#1 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#2 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#3 /var/yii/framework/web/filters/CInlineFilter.php(59): EventController->filterAccessControl()
+#4 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#5 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#6 /var/yii/framework/web/CController.php(266): EventController->runActionWithFilters()
+#7 /var/yii/framework/web/CWebApplication.php(283): EventController->run()
+#8 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#9 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/event/create
+in /var/www/tsw-signups/protected/controllers/EventController.php (65)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:13:09 [error] [php] Missing argument 1 for Event::getMembersSignedByArchetype(), called in /var/yii/framework/base/CComponent.php on line 112 and defined (/var/www/tsw-signups/protected/models/Event.php:124)
+Stack trace:
+#0 /var/yii/framework/base/CComponent.php(264): Event->__get()
+#1 /var/yii/framework/db/ar/CActiveRecord.php(226): Event->__call()
+#2 /var/www/tsw-signups/protected/views/site/index.php(21): Event->__call()
+#3 /var/www/tsw-signups/protected/views/site/index.php(21): Event->membersSignedByArchetype()
+#4 /var/yii/framework/web/CBaseController.php(127): require()
+#5 /var/yii/framework/web/CBaseController.php(96): SiteController->renderInternal()
+#6 /var/yii/framework/web/CController.php(870): SiteController->renderFile()
+#7 /var/yii/framework/web/CController.php(783): SiteController->renderPartial()
+#8 /var/www/tsw-signups/protected/controllers/SiteController.php(34): SiteController->render()
+#9 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#10 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#11 /var/yii/framework/web/filters/CFilterChain.php(134): SiteController->runAction()
+#12 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#14 /var/yii/framework/web/filters/CInlineFilter.php(59): SiteController->filterAccessControl()
+#15 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#16 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#17 /var/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#18 /var/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#19 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#20 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/
+in /var/www/tsw-signups/protected/models/Event.php (124)
+in /var/www/tsw-signups/protected/views/site/index.php (21)
+in /var/www/tsw-signups/protected/views/site/index.php (21)
+2013/08/01 09:45:03 [error] [system.db.CDbCommand] Error in preparing SQL: SELECT archetype, COUNT(id) FROM 'event_member' 't' WHERE event_id = :event GROUP BY archetype
+in /var/www/tsw-signups/protected/models/Event.php (136)
+in /var/www/tsw-signups/protected/controllers/SiteController.php (50)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:45:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: id. The SQL statement executed was: SELECT archetype, COUNT(id) FROM 'event_member' 't' WHERE event_id = :event GROUP BY archetype.
+in /var/www/tsw-signups/protected/models/Event.php (136)
+in /var/www/tsw-signups/protected/controllers/SiteController.php (50)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:45:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: CDbCommand failed to prepare the SQL statement: SQLSTATE[HY000]: General error: 1 no such column: id. The SQL statement executed was: SELECT archetype, COUNT(id) FROM 'event_member' 't' WHERE event_id = :event GROUP BY archetype' in /var/yii/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/yii/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/yii/framework/db/ar/CActiveRecord.php(1291): CDbCommand->queryAll()
+#2 /var/yii/framework/db/ar/CActiveRecord.php(1410): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/tsw-signups/protected/models/Event.php(136): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/tsw-signups/protected/controllers/SiteController.php(50): Event->getArchetypeMembersSigned()
+#5 [internal function]: SiteController->actionSignup('1')
+#6 /var/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#7 /var/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#8 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#15 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/yii/framework/web/CWebApplication.php(283): CController->run('signup')
+#17 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/signup')
+#18 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/tsw-signups/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tsw-signups/site/signup/1?_=1375343103170
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 09:45:18 [error] [php] Undefined variable: availableArchetypes (/var/www/tsw-signups/protected/views/site/_signup_form.php:8)
+Stack trace:
+#0 /var/yii/framework/web/CController.php(870): SiteController->renderFile()
+#1 /var/www/tsw-signups/protected/controllers/SiteController.php(57): SiteController->renderPartial()
+#2 unknown(0): SiteController->actionSignup()
+#3 /var/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#4 /var/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#5 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#6 /var/yii/framework/web/filters/CFilterChain.php(134): SiteController->runAction()
+#7 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#9 /var/yii/framework/web/filters/CInlineFilter.php(59): SiteController->filterAccessControl()
+#10 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#11 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /var/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#13 /var/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#14 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#15 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/site/signup/1?_=1375343118235
+in /var/www/tsw-signups/protected/views/site/_signup_form.php (8)
+in /var/www/tsw-signups/protected/controllers/SiteController.php (57)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:48:43 [error] [php] Undefined variable: availableArchetypes (/var/www/tsw-signups/protected/views/site/_signup_form.php:8)
+Stack trace:
+#0 /var/yii/framework/web/CController.php(870): SiteController->renderFile()
+#1 /var/www/tsw-signups/protected/controllers/SiteController.php(62): SiteController->renderPartial()
+#2 unknown(0): SiteController->actionSignup()
+#3 /var/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#4 /var/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#5 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#6 /var/yii/framework/web/filters/CFilterChain.php(134): SiteController->runAction()
+#7 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#9 /var/yii/framework/web/filters/CInlineFilter.php(59): SiteController->filterAccessControl()
+#10 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#11 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#12 /var/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#13 /var/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#14 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#15 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/site/signup/1?_=1375343323068
+in /var/www/tsw-signups/protected/views/site/_signup_form.php (8)
+in /var/www/tsw-signups/protected/controllers/SiteController.php (62)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:53:15 [warning] [application] Failed to set unsafe attribute "notes" of "EventMember".
+in /var/www/tsw-signups/protected/controllers/SiteController.php (41)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:53:15 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/yii/framework/web/CWebApplication.php(283): CController->run('signup')
+#9 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/signup/ind...')
+#10 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/tsw-signups/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/tsw-signups/site/signup/index
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 09:53:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/yii/framework/web/CWebApplication.php(283): CController->run('signup')
+#9 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/signup/ind...')
+#10 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/tsw-signups/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/tsw-signups/site/signup/index
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 09:53:57 [warning] [application] Failed to set unsafe attribute "notes" of "EventMember".
+in /var/www/tsw-signups/protected/controllers/SiteController.php (41)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:53:57 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 columns event_id, member_id are not unique. The SQL statement executed was: INSERT INTO 'event_member' ("archetype", "event_id", "member_id", "date_signed") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /var/www/tsw-signups/protected/controllers/SiteController.php (46)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 09:53:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 19 columns event_id, member_id are not unique. The SQL statement executed was: INSERT INTO 'event_member' ("archetype", "event_id", "member_id", "date_signed") VALUES (:yp0, :yp1, :yp2, :yp3)' in /var/yii/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /var/yii/framework/db/ar/CActiveRecord.php(1017): CDbCommand->execute()
+#1 /var/yii/framework/db/ar/CActiveRecord.php(796): CActiveRecord->insert(NULL)
+#2 /var/www/tsw-signups/protected/controllers/SiteController.php(46): CActiveRecord->save()
+#3 [internal function]: SiteController->actionSignup('1')
+#4 /var/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#5 /var/yii/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#6 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#7 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#9 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#13 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /var/yii/framework/web/CWebApplication.php(283): CController->run('signup')
+#15 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/signup')
+#16 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#17 /var/www/tsw-signups/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/tsw-signups/site/signup/1?_=1375343634432
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 09:56:13 [error] [exception.CException] exception 'CException' with message 'Member and its behaviors do not have a method or closure named "hasSignedUp".' in /var/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/yii/framework/db/ar/CActiveRecord.php(226): CComponent->__call('hasSignedUp', Array)
+#1 /var/www/tsw-signups/protected/views/site/index.php(31): CActiveRecord->__call('hasSignedUp', Array)
+#2 /var/www/tsw-signups/protected/views/site/index.php(31): Member->hasSignedUp('1')
+#3 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#4 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#5 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#6 /var/yii/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#7 /var/www/tsw-signups/protected/controllers/SiteController.php(34): CController->render('index', Array)
+#8 /var/yii/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#9 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#16 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/yii/framework/web/CWebApplication.php(283): CController->run('')
+#18 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('')
+#19 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /var/www/tsw-signups/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/tsw-signups/
+---
+2013/08/01 18:50:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "unsign".' in /var/yii/framework/web/CController.php:484
+Stack trace:
+#0 /var/yii/framework/web/CController.php(271): CController->missingAction('unsign')
+#1 /var/yii/framework/web/CWebApplication.php(283): CController->run('unsign')
+#2 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/unsign')
+#3 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /var/www/tsw-signups/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/tsw-signups/site/unsign/1
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 18:52:29 [error] [php] Object of class Member could not be converted to string (/var/yii/framework/db/CDbCommand.php:275)
+Stack trace:
+#0 /var/yii/framework/db/schema/CDbCommandBuilder.php(101): CSqliteCommandBuilder->bindValues()
+#1 /var/yii/framework/db/ar/CActiveRecord.php(1290): CSqliteCommandBuilder->createFindCommand()
+#2 /var/yii/framework/db/ar/CActiveRecord.php(1459): EventMember->query()
+#3 /var/www/tsw-signups/protected/controllers/SiteController.php(77): EventMember->findByAttributes()
+#4 unknown(0): SiteController->actionUnsign()
+#5 /var/yii/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs()
+#6 /var/yii/framework/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams()
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): SiteController->runAction()
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): SiteController->filterAccessControl()
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): SiteController->runActionWithFilters()
+#15 /var/yii/framework/web/CWebApplication.php(283): SiteController->run()
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController()
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CWebApplication->run()
+REQUEST_URI=/tsw-signups/site/unsign/1
+in /var/www/tsw-signups/protected/controllers/SiteController.php (77)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 18:52:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/yii/framework/web/CController.php:337
+Stack trace:
+#0 /var/yii/framework/web/CController.php(310): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#2 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#3 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#4 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#5 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#6 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#7 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /var/yii/framework/web/CWebApplication.php(283): CController->run('unsign')
+#9 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('site/unsign/ind...')
+#10 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#11 /var/www/tsw-signups/index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/tsw-signups/site/unsign/index
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 18:54:31 [warning] [application] Failed to set unsafe attribute "notes" of "EventMember".
+in /var/www/tsw-signups/protected/controllers/SiteController.php (41)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 18:55:52 [warning] [application] Failed to set unsafe attribute "notes" of "EventMember".
+in /var/www/tsw-signups/protected/controllers/SiteController.php (41)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 18:55:56 [warning] [application] Failed to set unsafe attribute "notes" of "EventMember".
+in /var/www/tsw-signups/protected/controllers/SiteController.php (41)
+in /var/www/tsw-signups/index.php (13)
+2013/08/01 18:57:46 [error] [exception.CException] exception 'CException' with message 'Property "InstanceController.breadcrumbs" is not defined.' in /var/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/tsw-signups/protected/views/instance/create.php(5): CComponent->__set('breadcrumbs', Array)
+#1 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#2 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#3 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#5 /var/www/tsw-signups/protected/controllers/InstanceController.php(79): CController->render('create', Array)
+#6 /var/yii/framework/web/actions/CInlineAction.php(50): InstanceController->actionCreate()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('instance/create')
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/tsw-signups/instance/create
+HTTP_REFERER=http://localhost/tsw-signups/site/index
+---
+2013/08/01 19:44:19 [error] [exception.CException] exception 'CException' with message 'Property "InstanceController.breadcrumbs" is not defined.' in /var/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/tsw-signups/protected/views/instance/create.php(2): CComponent->__set('breadcrumbs', Array)
+#1 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#2 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#3 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#5 /var/www/tsw-signups/protected/controllers/InstanceController.php(84): CController->render('create', Array)
+#6 /var/yii/framework/web/actions/CInlineAction.php(50): InstanceController->actionCreate()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('instance/create')
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/tsw-signups/instance/create
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 19:44:20 [error] [exception.CException] exception 'CException' with message 'Property "InstanceController.breadcrumbs" is not defined.' in /var/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/tsw-signups/protected/views/instance/create.php(2): CComponent->__set('breadcrumbs', Array)
+#1 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#2 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#3 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#5 /var/www/tsw-signups/protected/controllers/InstanceController.php(84): CController->render('create', Array)
+#6 /var/yii/framework/web/actions/CInlineAction.php(50): InstanceController->actionCreate()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('instance/create')
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/tsw-signups/instance/create
+HTTP_REFERER=http://localhost/tsw-signups/
+---
+2013/08/01 19:44:37 [error] [exception.CException] exception 'CException' with message 'Property "InstanceController.breadcrumbs" is not defined.' in /var/yii/framework/base/CComponent.php:174
+Stack trace:
+#0 /var/www/tsw-signups/protected/views/instance/create.php(2): CComponent->__set('breadcrumbs', Array)
+#1 /var/yii/framework/web/CBaseController.php(127): require('/var/www/tsw-si...')
+#2 /var/yii/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/tsw-si...', Array, true)
+#3 /var/yii/framework/web/CController.php(870): CBaseController->renderFile('/var/www/tsw-si...', Array, true)
+#4 /var/yii/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#5 /var/www/tsw-signups/protected/controllers/InstanceController.php(84): CController->render('create', Array)
+#6 /var/yii/framework/web/actions/CInlineAction.php(50): InstanceController->actionCreate()
+#7 /var/yii/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#8 /var/yii/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#9 /var/yii/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#10 /var/yii/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#11 /var/yii/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#12 /var/yii/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 /var/yii/framework/web/CController.php(292): CFilterChain->run()
+#14 /var/yii/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /var/yii/framework/web/CWebApplication.php(283): CController->run('create')
+#16 /var/yii/framework/web/CWebApplication.php(142): CWebApplication->runController('instance/create')
+#17 /var/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#18 /var/www/tsw-signups/index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/tsw-signups/instance/create
+HTTP_REFERER=http://localhost/tsw-signups/
+---
