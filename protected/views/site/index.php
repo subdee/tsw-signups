@@ -22,8 +22,13 @@
                 <?php foreach ($event->archetypes as $arch => $count) : ?>
                     <?php $mcount = $count - $event->getMembersSignedByArchetype($arch); ?>
                     <p>
-                        <?php echo $mcount > 0 ? Archetype::toText($arch) . CHtml::tag('span', array('class' => 'event-signed'), $mcount) :
-                            CHtml::tag('strike', array(), Archetype::toText($arch) . CHtml::tag('span', array('class' => 'event-no-signed'), 0)); ?></span>
+                        <?php if ($mcount > 0) : ?>
+                            <?php echo CHtml::tag('span', array('class' => 'label ' . Archetype::cssClass($arch)), Archetype::toText($arch)); ?>
+                            <?php echo CHtml::tag('span', array('class' => 'event-signed'), $mcount); ?>
+                        <?php else : ?>
+                            <?php echo CHtml::tag('span', array('class' => 'label'), Archetype::toText($arch)); ?>
+                            <?php echo CHtml::tag('span', array('class' => 'event-no-signed'), 0); ?>
+                        <?php endif; ?>
                     </p>
                 <?php endforeach; ?>
                 <hr>

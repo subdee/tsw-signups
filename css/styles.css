@@ -52,7 +52,9 @@ legend {
     width: 300px;
     margin-bottom: 10px;
 }
-.index-event span {
+.index-event span.event-signed,
+.index-event span.event-no-signed,
+.index-event span.event-backups-signed {
     float: right;
     font-weight: bold;
 }
@@ -67,9 +69,6 @@ span.event-no-signed {
 }
 span.event-signed {
     color: darkgreen;
-}
-span.event-backups-signed {
-    color: darkblue;
 }
 .archetype-tank,
 .archetype-healer,
