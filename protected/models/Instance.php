@@ -42,7 +42,7 @@ class Instance extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, image, min_weapon_ql, min_talisman_ql, min_glyph_ql', 'required'),
-			array('min_weapon_ql, min_talisman_ql, min_glyph_ql', 'numerical', 'integerOnly'=>true),
+			array('min_weapon_ql, min_talisman_ql, min_glyph_ql', 'numerical'),
 			array('name, image', 'length', 'max'=>255),
 			array('notes', 'safe'),
 			// The following rule is used by search().

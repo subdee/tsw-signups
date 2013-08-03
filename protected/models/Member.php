@@ -44,7 +44,8 @@ class Member extends CActiveRecord {
     public function rules() {
         return array(
             array('name, role, main_archetype, avg_weapon_ql, avg_talisman_ql, avg_glyph_ql', 'required'),
-            array('role, main_archetype, secondary_archetype, third_archetype, avg_weapon_ql, avg_talisman_ql, avg_glyph_ql', 'numerical', 'integerOnly' => true),
+            array('role, main_archetype, secondary_archetype, third_archetype', 'numerical', 'integerOnly' => true),
+            array('avg_weapon_ql, avg_talisman_ql, avg_glyph_ql', 'numerical'),
             array('name, real_name, forum_name, avatar', 'length', 'max' => 255),
             array('notes, avatar, chronicle_url', 'safe'),
             array('id, name, role, real_name, forum_name, avatar, main_archetype, secondary_archetype, third_archetype, avg_weapon_ql, avg_talisman_ql, avg_glyph_ql, notes', 'safe', 'on' => 'search'),

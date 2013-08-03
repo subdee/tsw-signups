@@ -70,8 +70,10 @@ class MemberController extends Controller {
             } else {
                 $model->avatar = 'default_avatar.png';
             }
-            if ($model->save())
+            if ($model->save()) {
+                Yii::app()->user->member->refresh();
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(
@@ -86,9 +88,7 @@ class MemberController extends Controller {
      */
     public function actionUpdate($id) {
         $model = $this->loadModel($id);
-
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+        $origFile = $model->avatar;
 
         if (isset($_POST['Member'])) {
             $model->attributes = $_POST['Member'];
@@ -97,11 +97,15 @@ class MemberController extends Controller {
             if ($file) {
                 $file->saveAs(Yii::app()->basePath . '/../images/avatars/' . $file->name);
                 $model->avatar = $file->name;
+            } elseif ($origFile) {
+                $model->avatar = $origFile;
             } else {
                 $model->avatar = 'default_avatar.png';
             }
-            if ($model->save())
+            if ($model->save()) {
+                Yii::app()->user->member->refresh();
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('update', array(

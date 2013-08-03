@@ -149,4 +149,12 @@ class Event extends CActiveRecord {
             'archetype' => Archetype::ARCHETYPE_BACKUP,
         ));
     }
+
+    public function meetsRequirements() {
+        $member = Yii::app()->user->member;
+        return ($member->avg_weapon_ql >= $this->instance->min_weapon_ql) &&
+        ($member->avg_talisman_ql >= $this->instance->min_talisman_ql) &&
+        ($member->avg_glyph_ql >= $this->instance->min_glyph_ql);
+
+    }
 }

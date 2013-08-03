@@ -33,7 +33,12 @@
                 <?php endforeach; ?>
                 <hr>
                 <div class="text-center">
-                    <?php if (Yii::app()->user->member->hasSignedUp($event->id)) : ?>
+                    <?php if (!$event->meetsRequirements()) : ?>
+                        <small>You cannot sign up for this event<br>
+                            because you don't meet the minimum<br>
+                            QL requirements!
+                        </small>
+                    <?php elseif (Yii::app()->user->member->hasSignedUp($event->id)) : ?>
                         <p>You are signed up for this event!</p>
                         <?php $this->widget('bootstrap.widgets.TbButton', array(
                             'label' => 'Unsign',
