@@ -111,6 +111,12 @@ class Event extends CActiveRecord {
         );
     }
 
+    public function defaultScope() {
+        return array(
+            'order' => 'start_date DESC'
+        );
+    }
+
     public function beforeSave() {
         $this->archetypes = json_encode($this->archetypes);
         return parent::beforeSave();

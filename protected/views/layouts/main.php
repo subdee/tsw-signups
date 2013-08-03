@@ -15,9 +15,9 @@
 
 <?php
 $items = CMap::mergeArray(array(
-    array('label' => 'Create event', 'url' => array('/event/create'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
-    array('label' => 'Add instance', 'url' => array('/instance/create'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
-    array('label' => 'Add member', 'url' => array('/member/index'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
+    array('label' => 'Events', 'url' => array('/event/admin'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
+    array('label' => 'Instances', 'url' => array('/instance/admin'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
+    array('label' => 'Members', 'url' => array('/member/admin'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
     array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
     array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
 //), $this->menu);

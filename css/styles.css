@@ -31,7 +31,9 @@ h3, h4 {
 .modal {
     color: #222;
 }
-
+legend {
+    color: #ddd !important;
+}
 
 .index-events {
     margin: 20px;

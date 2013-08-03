@@ -93,12 +93,17 @@ class EventController extends Controller {
 
         if (isset($_POST['Event'])) {
             $model->attributes = $_POST['Event'];
+            $archetypes = array();
+            foreach ($_POST['Arch'] as $arch)
+                $archetypes[$arch['key']] = $arch['count'];
+            $model->archetypes = $archetypes;
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
 
         $this->render('update', array(
             'model' => $model,
+            'archetypes' => Archetype::getArray(),
         ));
     }
 
@@ -134,7 +139,7 @@ class EventController extends Controller {
      */
     public function actionAdmin() {
         $model = new Event('search');
-        $model->unsetAttributes(); // clear any default values
+        $model->unsetAttributes();
         if (isset($_GET['Event']))
             $model->attributes = $_GET['Event'];
 
