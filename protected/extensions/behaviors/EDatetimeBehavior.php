@@ -26,7 +26,8 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
                 continue;
             }
 
-            $event->sender->$columnName = date($this->dateTimeYiiFormat, strtotime($event->sender->$columnName));
+            $date = new DateTime($event->sender->$columnName, new DateTimeZone(Yii::app()->user->member->timezone->timezone));
+            $event->sender->$columnName = $date->setTimezone(new DateTimeZone('UTC'))->format('Y-m-d H:i:s');
 
         }
         return true;
@@ -47,6 +48,10 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
                 $event->sender->$columnName = null;
                 continue;
             }
+
+            $date = new DateTime($event->sender->$columnName, new DateTimeZone('UTC'));
+
+            $event->sender->$columnName = $date->setTimezone(new DateTimeZone(Yii::app()->user->member->timezone->timezone))->format('Y-m-d H:i:s');
 
             $event->sender->$columnName =
                 Yii::app()->dateFormatter->formatDateTime(

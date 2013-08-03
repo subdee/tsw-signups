@@ -1,16 +1,16 @@
 <p>
-    <h1><?php echo $model->name; ?></h1>
-    <p>
-        <?php echo CHtml::image(Yii::app()->baseUrl . "/images/avatars/{$model->avatar}"); ?>
-        <?php $this->widget('bootstrap.widgets.TbButton', array(
-            'label' => 'Edit',
-            'type' => 'success',
-            'type' => 'info',
-            'size' => 'small',
-            'url' => Yii::app()->createUrl('member/update', array('id' => $model->id)),
-            'htmlOptions' => array('style' => 'float: right;')
-        )); ?>
-    </p>
+<h1><?php echo $model->name; ?></h1>
+<p>
+    <?php echo CHtml::image(Yii::app()->baseUrl . "/images/avatars/{$model->avatar}"); ?>
+    <?php $this->widget('bootstrap.widgets.TbButton', array(
+        'label' => 'Edit',
+        'type' => 'success',
+        'type' => 'info',
+        'size' => 'small',
+        'url' => Yii::app()->createUrl('member/update', array('id' => $model->id)),
+        'htmlOptions' => array('style' => 'float: right;')
+    )); ?>
+</p>
 </p>
 <?php $this->widget('bootstrap.widgets.TbDetailView', array(
     'data' => $model,
@@ -44,6 +44,7 @@
             'type' => 'url',
             'name' => 'chronicle_url',
         ),
+        'timezone.timezone',
         'notes',
     ),
 )); ?>

@@ -34,6 +34,8 @@
 
 <?php echo $form->textFieldRow($model, 'chronicle_url', array('class' => 'span5')); ?>
 
+<?php echo $form->dropDownListRow($model, 'timezone_id', CHtml::listData(Timezone::model()->findAll(), 'id', 'timezone'), array('class' => 'span5', 'prompt' => 'Select one')); ?>
+
 <?php echo $form->textAreaRow($model, 'notes', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
 
 <div class="form-actions">

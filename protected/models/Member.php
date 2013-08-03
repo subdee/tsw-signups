@@ -43,7 +43,7 @@ class Member extends CActiveRecord {
      */
     public function rules() {
         return array(
-            array('name, role, main_archetype, avg_weapon_ql, avg_talisman_ql, avg_glyph_ql', 'required'),
+            array('name, role, main_archetype, avg_weapon_ql, avg_talisman_ql, avg_glyph_ql, timezone_id', 'required'),
             array('role, main_archetype, secondary_archetype, third_archetype', 'numerical', 'integerOnly' => true),
             array('avg_weapon_ql, avg_talisman_ql, avg_glyph_ql', 'numerical'),
             array('name, real_name, forum_name, avatar', 'length', 'max' => 255),
@@ -58,6 +58,7 @@ class Member extends CActiveRecord {
     public function relations() {
         return array(
             'events' => array(self::MANY_MANY, 'Event', 'event_member(member_id, event_id)'),
+            'timezone' => array(self::BELONGS_TO, 'Timezone', 'timezone_id'),
         );
     }
 
@@ -79,6 +80,7 @@ class Member extends CActiveRecord {
             'avg_talisman_ql' => 'Average Talisman QL',
             'avg_glyph_ql' => 'Average Glyph QL',
             'notes' => 'Notes',
+            'timezone_id' => 'Timezone',
         );
     }
 

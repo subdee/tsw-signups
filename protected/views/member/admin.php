@@ -42,6 +42,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 		'avg_weapon_ql',
 		'avg_talisman_ql',
 		'avg_glyph_ql',
+        'timezone.timezone',
 		'notes',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
