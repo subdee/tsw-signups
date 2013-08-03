@@ -8,7 +8,7 @@
         <h4><?php echo Yii::t('default', 'Select an event to signup'); ?></h4>
     </div>
     <div class="row index-events">
-        <p class="hint">Timezones are adjusted to your timezone.
+        <p class="hint">Event times are adjusted to your timezone.
             Edit your timezone from your <a href="<?php echo Yii::app()->createUrl('member/update/' . Yii::app()->user->member->id); ?>">profile</a></p>
         <?php foreach ($events as $event) : ?>
             <div class="index-event span-4">
