@@ -1,6 +1,7 @@
 <?php $this->widget('bootstrap.widgets.TbButton', array(
     'label'=>'Create new event',
     'type'=>'success',
+    'url' => Yii::app()->createUrl('event/create'),
 )); ?>
 
 <?php $this->widget('bootstrap.widgets.TbGridView',array(

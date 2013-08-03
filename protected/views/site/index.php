@@ -8,7 +8,7 @@
         <h4><?php echo Yii::t('default', 'Select an event to signup'); ?></h4>
     </div>
     <div class="row index-events">
-        <p class="hint">All times are based on GMT</p>
+        <p class="hint">All times are based on EST timezone</p>
         <?php foreach ($events as $event) : ?>
             <div class="index-event span-4">
                 <h4><?php echo $event->instance->name; ?></h4>
