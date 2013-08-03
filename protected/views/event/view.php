@@ -3,14 +3,18 @@
 
 <p>Members that have signed up</p>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
-    'type' => 'striped condensed',
+    'type' => 'condensed',
     'dataProvider' => $model->search(),
     'template' => '{items}',
     'columns' => array(
-        'member.name',
+        array (
+            'name' => 'member.name',
+            'htmlOptions' => array('style' => 'font-weight: bold;')
+        ),
         array(
+            'type' => 'raw',
             'name' => 'archetype',
-            'value' => 'Archetype::toText($data->archetype)',
+            'value' => 'CHtml::tag("span", array("class" => "label " . Archetype::cssClass($data->archetype)), Archetype::toText($data->archetype))',
         ),
         'notes',
         array(

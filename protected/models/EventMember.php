@@ -41,6 +41,7 @@ class EventMember extends CActiveRecord
 		return array(
 			array('event_id, member_id, archetype, date_signed', 'required'),
 			array('event_id, member_id, archetype', 'numerical', 'integerOnly'=>true),
+            array('notes', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('event_id, member_id, archetype', 'safe', 'on'=>'search'),

@@ -35,4 +35,20 @@ class Archetype {
                 break;
         }
     }
+
+    public static function cssClass($archetype) {
+        switch ($archetype) {
+            case self::ARCHETYPE_TANK:
+                return 'label-info';
+            case self::ARCHETYPE_HEALER:
+                return 'label-success';
+            case self::ARCHETYPE_DPS:
+                return 'label-important';
+            case self::ARCHETYPE_BACKUP:
+                return '';
+            default:
+                return false;
+                break;
+        }
+    }
 }

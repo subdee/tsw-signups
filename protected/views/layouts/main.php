@@ -6,10 +6,9 @@
     <meta name="language" content="en"/>
 
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/styles.css"/>
+    <?php Yii::app()->bootstrap->register(); ?>
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-
-    <?php Yii::app()->bootstrap->register(); ?>
 </head>
 
 <body>
@@ -37,7 +36,6 @@ $this->widget('bootstrap.widgets.TbNavbar', array(
     <?php echo $content; ?>
 
     <div class="clear"></div>
-    <hr>
     <div id="footer">
         Copyright &copy; <?php echo date('Y'); ?> by Subdee Studio<br/>
     </div>

@@ -32,7 +32,7 @@
                         <p>You are signed up for this event!</p>
                         <?php $this->widget('bootstrap.widgets.TbButton', array(
                             'label' => 'Unsign',
-                            'type' => 'primary',
+                            'type' => 'danger',
                             'url' => Yii::app()->createUrl('site/unsign', array('id' => $event->id)),
                         )); ?>
                     <?php else : ?>
