@@ -7,9 +7,6 @@ $this->menu=array(
 	array('label'=>'Manage Instance','url'=>array('admin')),
 );
 ?>
-
-<h1>View Instance #<?php echo $model->id; ?></h1>
-
 <?php $this->widget('bootstrap.widgets.TbDetailView',array(
 	'data'=>$model,
 	'attributes'=>array(
