@@ -1,85 +1,40 @@
-<?php
-/* @var $this MemberController */
-/* @var $model Member */
-/* @var $form CActiveForm */
-?>
-
-<div class="wide form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'action'=>Yii::app()->createUrl($this->route),
 	'method'=>'get',
 )); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'id'); ?>
-		<?php echo $form->textField($model,'id'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'id',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'role'); ?>
-		<?php echo $form->textField($model,'role'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'role',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'real_name'); ?>
-		<?php echo $form->textField($model,'real_name',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'real_name',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'forum_name'); ?>
-		<?php echo $form->textField($model,'forum_name',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'forum_name',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'avatar'); ?>
-		<?php echo $form->textField($model,'avatar',array('size'=>60,'maxlength'=>255)); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'avatar',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'main_archetype'); ?>
-		<?php echo $form->textField($model,'main_archetype'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'main_archetype',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'secondary_archetype'); ?>
-		<?php echo $form->textField($model,'secondary_archetype'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'secondary_archetype',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'third_archetype'); ?>
-		<?php echo $form->textField($model,'third_archetype'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'third_archetype',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'avg_weapon_ql'); ?>
-		<?php echo $form->textField($model,'avg_weapon_ql'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'avg_weapon_ql',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'avg_talisman_ql'); ?>
-		<?php echo $form->textField($model,'avg_talisman_ql'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'avg_talisman_ql',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'avg_glyph_ql'); ?>
-		<?php echo $form->textField($model,'avg_glyph_ql'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model,'avg_glyph_ql',array('class'=>'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->label($model,'notes'); ?>
-		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
-	</div>
+	<?php echo $form->textAreaRow($model,'notes',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Search'); ?>
+	<div class="form-actions">
+		<?php $this->widget('bootstrap.widgets.TbButton', array(
+			'buttonType'=>'submit',
+			'type'=>'primary',
+			'label'=>'Search',
+		)); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- search-form -->

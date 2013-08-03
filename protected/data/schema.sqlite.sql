@@ -17,6 +17,7 @@ CREATE TABLE member (
   avg_weapon_ql       INTEGER      NOT NULL,
   avg_talisman_ql     INTEGER      NOT NULL,
   avg_glyph_ql        INTEGER      NOT NULL,
+  chronicle_url       TEXT,
   notes               TEXT
 );
 CREATE TABLE loot (

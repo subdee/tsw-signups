@@ -14,10 +14,12 @@
 <body>
 
 <?php
+$memberID = isset(Yii::app()->user->member) ? Yii::app()->user->member->id : 0;
 $items = CMap::mergeArray(array(
     array('label' => 'Events', 'url' => array('/event/admin'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
     array('label' => 'Instances', 'url' => array('/instance/admin'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
     array('label' => 'Members', 'url' => array('/member/admin'), 'visible' => !Yii::app()->user->isGuest && (Yii::app()->user->member->role == Role::ROLE_ADMIN)),
+    array('label' => 'Profile', 'url' => array('/member/view/' . $memberID), 'visible' => !Yii::app()->user->isGuest),
     array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
     array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
 //), $this->menu);

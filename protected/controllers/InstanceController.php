@@ -91,9 +91,15 @@ class InstanceController extends Controller
 
 		if(isset($_POST['Instance']))
 		{
-			$model->attributes=$_POST['Instance'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+            $model->attributes=$_POST['Instance'];
+            $model->image = null;
+            $file = CUploadedFile::getInstance($model, 'image');
+            if ($file) {
+                $file->saveAs(Yii::app()->basePath . '/../images/instances/' . $file->name);
+                $model->image = $file->name;
+            }
+            if($model->save())
+                $this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(

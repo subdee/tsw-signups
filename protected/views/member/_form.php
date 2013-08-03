@@ -1,96 +1,47 @@
-<?php
-/* @var $this MemberController */
-/* @var $model Member */
-/* @var $form CActiveForm */
-?>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'member-form',
-	'enableAjaxValidation'=>false,
+<?php $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+    'id' => 'member-form',
+    'enableAjaxValidation' => false,
+    'htmlOptions' => array(
+        'enctype' => 'multipart/form-data'
+    )
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+<p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
-	<?php echo $form->errorSummary($model); ?>
+<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
+<?php echo $form->textFieldRow($model, 'name', array('class' => 'span5', 'maxlength' => 255)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'role'); ?>
-		<?php echo $form->textField($model,'role'); ?>
-		<?php echo $form->error($model,'role'); ?>
-	</div>
+<?php echo $form->dropDownListRow($model, 'role', Role::getArray(), array('class' => 'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'real_name'); ?>
-		<?php echo $form->textField($model,'real_name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'real_name'); ?>
-	</div>
+<?php echo $form->textFieldRow($model, 'real_name', array('class' => 'span5', 'maxlength' => 255)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'forum_name'); ?>
-		<?php echo $form->textField($model,'forum_name',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'forum_name'); ?>
-	</div>
+<?php echo $form->textFieldRow($model, 'forum_name', array('class' => 'span5', 'maxlength' => 255)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'avatar'); ?>
-		<?php echo $form->textField($model,'avatar',array('size'=>60,'maxlength'=>255)); ?>
-		<?php echo $form->error($model,'avatar'); ?>
-	</div>
+<?php echo $form->fileFieldRow($model, 'avatar', array('class' => 'span5', 'maxlength' => 255)); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'main_archetype'); ?>
-		<?php echo $form->textField($model,'main_archetype'); ?>
-		<?php echo $form->error($model,'main_archetype'); ?>
-	</div>
+<?php echo $form->dropDownListRow($model, 'main_archetype', Archetype::getArray(), array('class' => 'span5', 'prompt' => 'Select one')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'secondary_archetype'); ?>
-		<?php echo $form->textField($model,'secondary_archetype'); ?>
-		<?php echo $form->error($model,'secondary_archetype'); ?>
-	</div>
+<?php echo $form->dropDownListRow($model, 'secondary_archetype', Archetype::getArray(), array('class' => 'span5', 'prompt' => 'Select one')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'third_archetype'); ?>
-		<?php echo $form->textField($model,'third_archetype'); ?>
-		<?php echo $form->error($model,'third_archetype'); ?>
-	</div>
+<?php echo $form->dropDownListRow($model, 'third_archetype', Archetype::getArray(), array('class' => 'span5', 'prompt' => 'Select one')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'avg_weapon_ql'); ?>
-		<?php echo $form->textField($model,'avg_weapon_ql'); ?>
-		<?php echo $form->error($model,'avg_weapon_ql'); ?>
-	</div>
+<?php echo $form->textFieldRow($model, 'avg_weapon_ql', array('class' => 'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'avg_talisman_ql'); ?>
-		<?php echo $form->textField($model,'avg_talisman_ql'); ?>
-		<?php echo $form->error($model,'avg_talisman_ql'); ?>
-	</div>
+<?php echo $form->textFieldRow($model, 'avg_talisman_ql', array('class' => 'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'avg_glyph_ql'); ?>
-		<?php echo $form->textField($model,'avg_glyph_ql'); ?>
-		<?php echo $form->error($model,'avg_glyph_ql'); ?>
-	</div>
+<?php echo $form->textFieldRow($model, 'avg_glyph_ql', array('class' => 'span5')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'notes'); ?>
-		<?php echo $form->textArea($model,'notes',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'notes'); ?>
-	</div>
+<?php echo $form->textFieldRow($model, 'chronicle_url', array('class' => 'span5')); ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
+<?php echo $form->textAreaRow($model, 'notes', array('rows' => 6, 'cols' => 50, 'class' => 'span8')); ?>
+
+<div class="form-actions">
+    <?php $this->widget('bootstrap.widgets.TbButton', array(
+        'buttonType' => 'submit',
+        'type' => 'primary',
+        'label' => $model->isNewRecord ? 'Create' : 'Save',
+    )); ?>
+</div>
 
 <?php $this->endWidget(); ?>
-
-</div><!-- form -->

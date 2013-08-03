@@ -1,38 +1,49 @@
-<?php
-/* @var $this MemberController */
-/* @var $model Member */
-
-$this->breadcrumbs=array(
-	'Members'=>array('index'),
-	$model->name,
-);
-
-$this->menu=array(
-	array('label'=>'List Member', 'url'=>array('index')),
-	array('label'=>'Create Member', 'url'=>array('create')),
-	array('label'=>'Update Member', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Member', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Member', 'url'=>array('admin')),
-);
-?>
-
-<h1>View Member #<?php echo $model->id; ?></h1>
-
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'name',
-		'role',
-		'real_name',
-		'forum_name',
-		'avatar',
-		'main_archetype',
-		'secondary_archetype',
-		'third_archetype',
-		'avg_weapon_ql',
-		'avg_talisman_ql',
-		'avg_glyph_ql',
-		'notes',
-	),
+<p>
+    <h1><?php echo $model->name; ?></h1>
+    <p>
+        <?php echo CHtml::image(Yii::app()->baseUrl . "/images/avatars/{$model->avatar}"); ?>
+        <?php $this->widget('bootstrap.widgets.TbButton', array(
+            'label' => 'Edit',
+            'type' => 'success',
+            'type' => 'info',
+            'size' => 'small',
+            'url' => Yii::app()->createUrl('member/update', array('id' => $model->id)),
+            'htmlOptions' => array('style' => 'float: right;')
+        )); ?>
+    </p>
+</p>
+<?php $this->widget('bootstrap.widgets.TbDetailView', array(
+    'data' => $model,
+    'type' => 'condensed',
+    'attributes' => array(
+        array(
+            'name' => 'role',
+            'value' => Role::toText($model->role),
+        ),
+        'real_name',
+        'forum_name',
+        array(
+            'type' => 'raw',
+            'name' => 'main_archetype',
+            'value' => CHtml::tag("span", array("class" => "label " . Archetype::cssClass($model->main_archetype)), Archetype::toText($model->main_archetype))
+        ),
+        array(
+            'type' => 'raw',
+            'name' => 'secondary_archetype',
+            'value' => CHtml::tag("span", array("class" => "label " . Archetype::cssClass($model->secondary_archetype)), Archetype::toText($model->secondary_archetype))
+        ),
+        array(
+            'type' => 'raw',
+            'name' => 'third_archetype',
+            'value' => CHtml::tag("span", array("class" => "label " . Archetype::cssClass($model->third_archetype)), Archetype::toText($model->third_archetype))
+        ),
+        'avg_weapon_ql',
+        'avg_talisman_ql',
+        'avg_glyph_ql',
+        array(
+            'type' => 'url',
+            'name' => 'chronicle_url',
+        ),
+        'notes',
+    ),
 )); ?>

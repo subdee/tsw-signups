@@ -12,6 +12,11 @@
             'htmlOptions' => array('style' => 'font-weight: bold;')
         ),
         array(
+            'name' => 'member.avatar',
+            'type' => 'image',
+            'value' => 'Yii::app()->baseUrl . "/images/avatars/{$data->member->avatar}"'
+        ),
+        array(
             'type' => 'raw',
             'name' => 'archetype',
             'value' => 'CHtml::tag("span", array("class" => "label " . Archetype::cssClass($data->archetype)), Archetype::toText($data->archetype))',

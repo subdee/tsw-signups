@@ -23,6 +23,11 @@ return array(
         'bootstrap' => array(
             'class' => 'bootstrap.components.Bootstrap',
         ),
+        'image' => array(
+            'class' => 'application.extensions.image.CImageComponent',
+            'driver' => 'GD',
+//            'params' => array('directory' => '/usr/bin'),
+        ),
         'user' => array(
             'allowAutoLogin' => true,
         ),
