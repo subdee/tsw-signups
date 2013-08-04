@@ -15,7 +15,6 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
     */
     public function beforeSave($event) {
 
-        // search for date/datetime columns. Convert it to dateformat used in database (Y-m-d)
         foreach ($event->sender->tableSchema->columns as $columnName => $column) {
 
             if (($column->dbType != 'date') and ($column->dbType != 'datetime'))
@@ -26,7 +25,10 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
                 continue;
             }
 
-            $date = new DateTime($event->sender->$columnName, new DateTimeZone(Yii::app()->user->member->timezone->timezone));
+            if (isset(Yii::app()->user->member->timezone))
+                $date = new DateTime($event->sender->$columnName, new DateTimeZone(Yii::app()->user->member->timezone->timezone));
+            else
+                $date = new DatTime($event->sender->$columnName);
             $event->sender->$columnName = $date->setTimezone(new DateTimeZone('UTC'))->format('Y-m-d H:i:s');
 
         }
@@ -51,9 +53,12 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
 
             $date = new DateTime($event->sender->$columnName, new DateTimeZone('UTC'));
 
-            $event->sender->$columnName = $date->setTimezone(new DateTimeZone(Yii::app()->user->member->timezone->timezone))->format('Y-m-d H:i:s');
+            if (isset(Yii::app()->user->member->timezone))
+                $event->sender->$columnName = $date->setTimezone(new DateTimeZone(Yii::app()->user->member->timezone->timezone))->format('Y-m-d H:i:s');
+            else
+                $event->sender->$columnName = $date->format('Y-m-d H:i:s');
 
-            $event->sender->$columnName =
+                $event->sender->$columnName =
                 Yii::app()->dateFormatter->formatDateTime(
                     strtotime($event->sender->$columnName), 'medium', ($column->dbType != 'date') ? 'medium' : '');
 
