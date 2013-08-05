@@ -8,8 +8,10 @@
         <h4><?php echo Yii::t('default', 'Select an event to signup'); ?></h4>
     </div>
     <div class="row index-events">
-        <p class="hint">Event times are adjusted to your timezone.
-            Edit your timezone from your <a href="<?php echo Yii::app()->createUrl('member/update/' . Yii::app()->user->member->id); ?>">profile</a></p>
+        <p class="hint">
+            Event times are adjusted to your timezone.Edit your timezone from your
+            <a href="<?php echo Yii::app()->createUrl('member/update/' . Yii::app()->user->member->id); ?>">profile</a>
+        </p>
         <?php foreach ($events as $event) : ?>
             <div class="index-event span-4">
                 <h4><?php echo $event->instance->name; ?></h4>
@@ -64,9 +66,7 @@
                             ),
                         )); ?>
                     <?php endif; ?>
-                    <?php if (Yii::app()->user->member->role == Role::ROLE_ADMIN) : ?>
-                        <p class="hint"><?php echo CHtml::link('View signups for this event', Yii::app()->createUrl('event/view', array('id' => $event->id))); ?></p>
-                    <?php endif; ?>
+                    <p class="hint"><?php echo CHtml::link('View signups for this event', Yii::app()->createUrl('event/view', array('id' => $event->id))); ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
