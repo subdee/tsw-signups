@@ -5,7 +5,6 @@
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
     'type' => 'condensed',
     'dataProvider' => $model->search(),
-    'template' => '{items}',
     'columns' => array(
         array (
             'name' => 'member.name',
