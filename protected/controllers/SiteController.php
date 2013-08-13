@@ -98,6 +98,9 @@ class SiteController extends Controller {
      * Displays the login page
      */
     public function actionLogin() {
+        if (!Yii::app()->user->isGuest)
+            $this->redirect(Yii::app()->createUrl('site/index'));
+
         $model = new LoginForm;
 
         // if it is ajax validation request
