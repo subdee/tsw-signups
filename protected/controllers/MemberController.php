@@ -91,6 +91,9 @@ class MemberController extends Controller {
         $origFile = $model->avatar;
 
         if (isset($_POST['Member'])) {
+            if (isset($_POST['Member']['role']) && Yii::app()->user->member->role != Role::ROLE_ADMIN){
+                unset($_POST['Member']['role']);
+            }
             $model->attributes = $_POST['Member'];
             $model->avatar = null;
             $file = CUploadedFile::getInstance($model, 'avatar');
