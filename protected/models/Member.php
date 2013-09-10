@@ -118,6 +118,8 @@ class Member extends CActiveRecord {
             $imageP = Yii::app()->image->load(Yii::app()->basePath . "/../images/avatars/{$this->avatar}");
             $imageP->resize(50, null)->quality(100)->save(Yii::app()->basePath . "/../images/avatars/{$this->avatar}");
         }
+        if (Yii::app()->user->member->role != Role::ROLE_ADMIN)
+            $this->role = Role::ROLE_MEMBER;
 
         return parent::beforeSave();
     }
