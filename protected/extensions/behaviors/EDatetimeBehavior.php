@@ -25,6 +25,8 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
                 continue;
             }
 
+		$event->sender->$columnName = $this->parseDateTime($event->sender->$columnName);
+
             if (isset(Yii::app()->user->member->timezone))
                 $date = new DateTime($event->sender->$columnName, new DateTimeZone(Yii::app()->user->member->timezone->timezone));
             else
@@ -59,11 +61,18 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
                 $event->sender->$columnName = $date->format('Y-m-d H:i:s');
 
                 $event->sender->$columnName =
-                Yii::app()->dateFormatter->formatDateTime(
-                    strtotime($event->sender->$columnName), 'medium', ($column->dbType != 'date') ? 'medium' : '');
+                Yii::app()->dateFormatter->format("EEEE, d MMMM H:m", strtotime($event->sender->$columnName));
 
         }
         return true;
     }
+
+	private function parseDateTime($datetime) {
+		list($day, $datetime) = explode(',', $datetime);
+		list($empty, $date, $month, $time) = explode(' ', $datetime);
+		list($hour, $minute) = explode(':', $time);
+
+		return $date . '-' . $month . '-' . date('Y') . ' ' . $hour . ':' . $minute . ':00';
+	}
 
 }

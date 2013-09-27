@@ -47,6 +47,7 @@ legend {
     font-size: 1.2em;
     color: #222;
     min-height: 620px;
+    max-width: 300px;
 }
 .index-events .index-event img {
     width: 300px;

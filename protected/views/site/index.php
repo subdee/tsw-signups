@@ -9,12 +9,13 @@
     </div>
     <div class="row index-events">
         <p class="hint">
-            Event times are adjusted to your timezone.Edit your timezone from your
+            Event times are adjusted to your timezone. Edit your timezone in your
             <a href="<?php echo Yii::app()->createUrl('member/update/' . Yii::app()->user->member->id); ?>">profile</a>
         </p>
         <?php foreach ($events as $event) : ?>
             <div class="index-event span-4">
-                <h4><?php echo $event->instance->name; ?></h4>
+                <h4><strong><?php echo $event->instance->name; ?></strong></h4>
+		    <p class="hint"><?php echo $event->notes; ?></p>
                 <?php echo CHtml::image(Yii::app()->baseUrl . '/images/instances/' . $event->instance->image); ?>
                 <p>Starts at <span class="event-start-date"><?php echo $event->start_date; ?></span></p>
                 <?php if ($event->end_date) : ?>
@@ -66,7 +67,7 @@
                             ),
                         )); ?>
                     <?php endif; ?>
-                    <p class="hint"><?php echo CHtml::link('View signups for this event', Yii::app()->createUrl('event/view', array('id' => $event->id))); ?></p>
+                    <p class="hint"><?php echo CHtml::link('View ' . count($event->members) . ' signups for this event', Yii::app()->createUrl('event/view', array('id' => $event->id))); ?></p>
                 </div>
             </div>
         <?php endforeach; ?>
