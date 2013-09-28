@@ -61,13 +61,16 @@ class EDatetimeBehavior extends CActiveRecordBehavior {
                 $event->sender->$columnName = $date->format('Y-m-d H:i:s');
 
                 $event->sender->$columnName =
-                Yii::app()->dateFormatter->format("EEEE, d MMMM H:m", strtotime($event->sender->$columnName));
+                Yii::app()->dateFormatter->format("EEEE, d MMMM HH:mm", strtotime($event->sender->$columnName));
 
         }
         return true;
     }
 
 	private function parseDateTime($datetime) {
+        if (new DateTime($datetime))
+            return $datetime;
+
 		list($day, $datetime) = explode(',', $datetime);
 		list($empty, $date, $month, $time) = explode(' ', $datetime);
 		list($hour, $minute) = explode(':', $time);
