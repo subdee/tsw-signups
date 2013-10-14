@@ -70,8 +70,18 @@ class EventController extends Controller {
             foreach ($_POST['Arch'] as $arch)
                 $archetypes[$arch['key']] = $arch['count'];
             $model->archetypes = $archetypes;
-            if ($model->save())
+            if ($model->save()) {
+                foreach ($_POST['event_members'] as $memberID) {
+                    $member = Member::model()->findByPk($memberID);
+                    $m = new EventMember();
+                    $m->event_id = $model->id;
+                    $m->member_id = $memberID;
+                    $m->archetype = $member->main_archetype;
+                    $m->date_signed = date('Y-m-d H:i:s');
+                    $m->save();
+                }
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('create', array(
@@ -86,6 +96,10 @@ class EventController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
+        Yii::app()->clientScript->registerCoreScript('jquery');
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/bootstrap-datetimepicker.min.js');
+        Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl . '/css/datetimepicker.css');
+
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
@@ -97,8 +111,19 @@ class EventController extends Controller {
             foreach ($_POST['Arch'] as $arch)
                 $archetypes[$arch['key']] = $arch['count'];
             $model->archetypes = $archetypes;
-            if ($model->save())
+            if ($model->save()) {
+                $model->removeAllMembers();
+                foreach ($_POST['event_members'] as $memberID) {
+                    $member = Member::model()->findByPk($memberID);
+                    $m = new EventMember();
+                    $m->event_id = $model->id;
+                    $m->member_id = $memberID;
+                    $m->archetype = $member->main_archetype;
+                    $m->date_signed = date('Y-m-d H:i:s');
+                    $m->save();
+                }
                 $this->redirect(array('view', 'id' => $model->id));
+            }
         }
 
         $this->render('update', array(

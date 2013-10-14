@@ -41,7 +41,7 @@ class Event extends CActiveRecord {
         return array(
             array('start_date, instance_id, archetypes', 'required'),
             array('instance_id', 'numerical', 'integerOnly' => true),
-            array('end_date, completed_in, notes', 'safe'),
+            array('end_date, completed_in, notes, is_private', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id, start_date, end_date, instance_id, completed_in, notes', 'safe', 'on' => 'search'),
@@ -70,6 +70,7 @@ class Event extends CActiveRecord {
             'instance_id' => 'Instance',
             'completed_in' => 'Completed In',
             'notes' => 'Notes',
+            'is_private' => 'Is event public or private?',
         );
     }
 
@@ -156,5 +157,21 @@ class Event extends CActiveRecord {
         ($member->avg_talisman_ql >= $this->instance->min_talisman_ql) &&
         ($member->avg_glyph_ql >= $this->instance->min_glyph_ql);
 
+    }
+
+    public function isUserInEvent() {
+        return EventMember::model()->findByPk(array(
+            'event_id' => $this->id,
+            'member_id' => Yii::app()->user->member->id
+        ));
+    }
+
+    public function removeAllMembers() {
+        foreach ($this->members as $member)
+            EventMember::model()->findByPk(array(
+                'event_id' => $this->id,
+                'member_id' => $member->id,
+            ))->delete();
+        return;
     }
 }
