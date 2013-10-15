@@ -66,13 +66,14 @@
         });
 
         $('#Event_is_private').change(function () {
-                $("fieldset#private").slideToggle($("fieldset#public").slideToggle());
+                $("fieldset#private").toggle();
+                $("fieldset#public").toggle();
             }
         );
 
         if ($('#Event_is_private').val() == 1) {
-            $("fieldset#private").toggle();
-            $("fieldset#public").toggle();
+            $("fieldset#private").show();
+            $("fieldset#public").hide();
         }
 
     });
