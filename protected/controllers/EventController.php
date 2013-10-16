@@ -61,26 +61,56 @@ class EventController extends Controller {
 
         $model = new Event;
 
-        // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
-
         if (isset($_POST['Event'])) {
-            $model->attributes = $_POST['Event'];
-            $archetypes = array();
-            foreach ($_POST['Arch'] as $arch)
-                $archetypes[$arch['key']] = $arch['count'];
-            $model->archetypes = $archetypes;
-            if ($model->save()) {
-                foreach ($_POST['event_members'] as $memberID) {
-                    $member = Member::model()->findByPk($memberID);
-                    $m = new EventMember();
-                    $m->event_id = $model->id;
-                    $m->member_id = $memberID;
-                    $m->archetype = $member->main_archetype;
-                    $m->date_signed = date('Y-m-d H:i:s');
-                    $m->save();
+            if (isset($_POST['repeat'])) {
+                for ($i = 0; $i < $_POST['number']; ++$i) {
+                    $model->attributes = $_POST['Event'];
+                    $startDate = new DateTime($model->start_date);
+                    $startDate->add(new DateInterval("P{$i}{$_POST['period']}"));
+                    $endDate = new DateTime($model->end_date);
+                    $endDate->add(new DateInterval("P{$i}{$_POST['period']}"));
+                    $model->start_date = $startDate->format('Y-m-d H:i:s');
+                    $model->end_date = $endDate->format('Y-m-d H:i:s');
+                    $archetypes = array();
+                    foreach ($_POST['Arch'] as $arch)
+                        $archetypes[$arch['key']] = $arch['count'];
+                    $model->archetypes = $archetypes;
+                    if ($model->save()) {
+                        if (isset($_POST['event_members'])) {
+                            foreach ($_POST['event_members'] as $memberID) {
+                                $member = Member::model()->findByPk($memberID);
+                                $m = new EventMember();
+                                $m->event_id = $model->id;
+                                $m->member_id = $memberID;
+                                $m->archetype = $member->main_archetype;
+                                $m->date_signed = date('Y-m-d H:i:s');
+                                $m->save();
+                            }
+                        }
+                        $model = new Event;
+                    }
                 }
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('admin'));
+            } else {
+                $model->attributes = $_POST['Event'];
+                $archetypes = array();
+                foreach ($_POST['Arch'] as $arch)
+                    $archetypes[$arch['key']] = $arch['count'];
+                $model->archetypes = $archetypes;
+                if ($model->save()) {
+                    if (isset($_POST['event_members'])) {
+                        foreach ($_POST['event_members'] as $memberID) {
+                            $member = Member::model()->findByPk($memberID);
+                            $m = new EventMember();
+                            $m->event_id = $model->id;
+                            $m->member_id = $memberID;
+                            $m->archetype = $member->main_archetype;
+                            $m->date_signed = date('Y-m-d H:i:s');
+                            $m->save();
+                        }
+                    }
+                    $this->redirect(array('view', 'id' => $model->id));
+                }
             }
         }
 

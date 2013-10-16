@@ -20,7 +20,21 @@
         <span class="add-on"><i class="icon-th"></i></span>
     </div>
 </div>
+<?php if ($model->isNewRecord) : ?>
+    <div class="customise-panel">
+        <?php echo CHtml::label('Repeat event', 'repeat'); ?>
+        <?php echo CHtml::checkBox('repeat', false, array('id' => 'event-repeat')); ?>
+    </div>
 
+    <div id="event-repeat-period" style="display: none;">
+        <?php echo CHtml::label('Period', 'period'); ?>
+        <?php echo CHtml::dropDownList('period', '', array('W' => 'Weekly', 'M' => 'Monthly')); ?>
+        <?php echo CHtml::label('Number of repetitions', 'number'); ?>
+        <?php echo CHtml::textField('number'); ?>
+    </div>
+
+    <hr>
+<?php endif; ?>
 <?php echo $form->dropDownListRow($model, 'instance_id', CHtml::listData(Instance::model()->findAll(), 'id', 'name'), array('class' => 'span5')); ?>
 
 <?php echo $form->dropDownListRow($model, 'is_private', array(0 => 'Public', 1 => 'Private'), array('class' => 'span5')); ?>
@@ -36,7 +50,8 @@
 </fieldset>
 <fieldset id="private" style="display:none; ">
     <legend>Members</legend>
-    <p class="hint">Select the members that will be part of this event. The event will only be visible to them and officers.</p>
+    <p class="hint">Select the members that will be part of this event. The event will only be visible to them and
+        officers.</p>
     <?php $this->widget('ext.select2.ESelect2', array(
         'name' => 'event_members[]',
         'value' => $model->members,
@@ -70,6 +85,14 @@
                 $("fieldset#public").toggle();
             }
         );
+
+        $('#event-repeat').change(function () {
+            if ($(this).is(":checked")) {
+                $("#event-repeat-period").show();
+            } else {
+                $("#event-repeat-period").hide();
+            }
+        });
 
         if ($('#Event_is_private').val() == 1) {
             $("fieldset#private").show();
