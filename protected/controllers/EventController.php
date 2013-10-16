@@ -142,15 +142,17 @@ class EventController extends Controller {
                 $archetypes[$arch['key']] = $arch['count'];
             $model->archetypes = $archetypes;
             if ($model->save()) {
-                $model->removeAllMembers();
-                foreach ($_POST['event_members'] as $memberID) {
-                    $member = Member::model()->findByPk($memberID);
-                    $m = new EventMember();
-                    $m->event_id = $model->id;
-                    $m->member_id = $memberID;
-                    $m->archetype = $member->main_archetype;
-                    $m->date_signed = date('Y-m-d H:i:s');
-                    $m->save();
+                if (isset($_POST['event_members'])) {
+                    $model->removeAllMembers();
+                    foreach ($_POST['event_members'] as $memberID) {
+                        $member = Member::model()->findByPk($memberID);
+                        $m = new EventMember();
+                        $m->event_id = $model->id;
+                        $m->member_id = $memberID;
+                        $m->archetype = $member->main_archetype;
+                        $m->date_signed = date('Y-m-d H:i:s');
+                        $m->save();
+                    }
                 }
                 $this->redirect(array('view', 'id' => $model->id));
             }
