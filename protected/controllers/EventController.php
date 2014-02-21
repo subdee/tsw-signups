@@ -26,7 +26,7 @@ class EventController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
+                'actions' => array('admin', 'delete', 'export'),
                 'expression' => '!Yii::app()->user->isGuest && Yii::app()->user->member->role == Role::ROLE_ADMIN',
             ),
             array('deny', // deny all users
@@ -204,6 +204,37 @@ class EventController extends Controller {
             'model' => $model,
         ));
     }
+
+	public function actionExport($event) {
+		$em = new EventMember();
+		$em->event_id = $event;
+		$this->widget('application.extensions.phpexcel.EExcelView', array(
+			'dataProvider'=> $em->search(),
+			'grid_mode'=>'export',
+			'title'=>'Signed up members',
+			'filename'=>'members',
+			'stream'=>true,
+			'exportType'=>'Excel2007',
+			'columns'=>array(
+				array (
+					'name' => 'member.name',
+					'htmlOptions' => array('style' => 'font-weight: bold;')
+				),
+				array(
+					'type' => 'raw',
+					'name' => 'archetype',
+					'value' => 'CHtml::tag("span", array("class" => "label " . Archetype::cssClass($data->archetype)), Archetype::toText($data->archetype))',
+				),
+				'notes',
+				array(
+					'name' => 'date_signed',
+					'value' => 'Yii::app()->dateFormatter->formatDateTime(strtotime($data->date_signed))'
+				),
+			),
+		));
+
+		Yii::app()->end();
+	}
 
     /**
      * Returns the data model based on the primary key given in the GET variable.

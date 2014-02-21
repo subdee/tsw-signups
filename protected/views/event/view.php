@@ -1,7 +1,14 @@
+<p style="float: right">
+	<?php $this->widget('bootstrap.widgets.TbButton', array(
+		'label' => 'Export to Excel',
+		'url' => $this->createUrl('event/export', array('event' => $model->event_id))
+	)); ?>
+</p>
 <p>Event: <?php echo $event->instance->name; ?></p>
 <p>Start time: <?php echo $event->start_date; ?></p>
 
 <p>Members that have signed up</p>
+
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
     'type' => 'condensed',
     'dataProvider' => $model->search(),
