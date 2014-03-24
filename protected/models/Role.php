@@ -22,8 +22,8 @@ class Role {
 
     public static function getArray() {
         return array(
-            self::ROLE_ADMIN => self::toText(self::ROLE_ADMIN),
             self::ROLE_MEMBER => self::toText(self::ROLE_MEMBER),
+            self::ROLE_ADMIN => self::toText(self::ROLE_ADMIN),
         );
     }
 }

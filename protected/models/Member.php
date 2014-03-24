@@ -43,7 +43,7 @@ class Member extends CActiveRecord {
      */
     public function rules() {
         return array(
-            array('name, role, main_archetype, avg_weapon_ql, avg_talisman_ql, avg_glyph_ql, timezone_id', 'required'),
+            array('name, role, main_archetype, timezone_id', 'required'),
             array('role, main_archetype, secondary_archetype, third_archetype', 'numerical', 'integerOnly' => true),
             array('avg_weapon_ql, avg_talisman_ql, avg_glyph_ql', 'numerical'),
             array('name, real_name, forum_name, avatar', 'length', 'max' => 255),
