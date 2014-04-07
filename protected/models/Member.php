@@ -21,27 +21,34 @@
  *
  * @property Event[] $events
  */
-class Member extends CActiveRecord {
+class Member extends CActiveRecord
+{
+
+    public $tempId;
+
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
      * @return Member the static model class
      */
-    public static function model($className = __CLASS__) {
+    public static function model($className = __CLASS__)
+    {
         return parent::model($className);
     }
 
     /**
      * @return string the associated database table name
      */
-    public function tableName() {
+    public function tableName()
+    {
         return 'member';
     }
 
     /**
      * @return array validation rules for model attributes.
      */
-    public function rules() {
+    public function rules()
+    {
         return array(
             array('name, role, main_archetype, timezone_id', 'required'),
             array('role, main_archetype, secondary_archetype, third_archetype', 'numerical', 'integerOnly' => true),
@@ -55,7 +62,8 @@ class Member extends CActiveRecord {
     /**
      * @return array relational rules.
      */
-    public function relations() {
+    public function relations()
+    {
         return array(
             'events' => array(self::MANY_MANY, 'Event', 'event_member(member_id, event_id)'),
             'timezone' => array(self::BELONGS_TO, 'Timezone', 'timezone_id'),
@@ -65,7 +73,8 @@ class Member extends CActiveRecord {
     /**
      * @return array customized attribute labels (name=>label)
      */
-    public function attributeLabels() {
+    public function attributeLabels()
+    {
         return array(
             'id' => 'ID',
             'name' => 'Name',
@@ -88,7 +97,8 @@ class Member extends CActiveRecord {
      * Retrieves a list of models based on the current search/filter conditions.
      * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
      */
-    public function search() {
+    public function search()
+    {
         // Warning: Please modify the following code to remove attributes that
         // should not be searched.
 
@@ -110,13 +120,14 @@ class Member extends CActiveRecord {
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
-		'pagination' => array (
-			'pageSize' => 50,
-		)
+            'pagination' => array(
+                'pageSize' => 50,
+            )
         ));
     }
 
-    public function beforeSave() {
+    public function beforeSave()
+    {
         if ($this->avatar != 'default-avatar.png') {
             $imageP = Yii::app()->image->load(Yii::app()->basePath . "/../images/avatars/{$this->avatar}");
             $imageP->resize(50, null)->quality(100)->save(Yii::app()->basePath . "/../images/avatars/{$this->avatar}");
@@ -127,7 +138,24 @@ class Member extends CActiveRecord {
         return parent::beforeSave();
     }
 
-    public function hasSignedUp($eventID) {
+    public function beforeDelete()
+    {
+        $this->tempId = $this->id;
+        return parent::beforeDelete();
+    }
+
+    public function afterDelete()
+    {
+        parent::afterDelete();
+        $events = EventMember::model()->findAllByAttributes(array('member_id' => $this->tempId));
+        foreach ($events as $event) {
+            $event->delete();
+        }
+        return;
+    }
+
+    public function hasSignedUp($eventID)
+    {
         return EventMember::model()->exists(
             'event_id = :event AND member_id = :member',
             array(':event' => $eventID, ':member' => $this->id)
